@@ -11,11 +11,49 @@
   </head>
   <body>
     <div class="demo-wrappper">
-      <h1 class="text"></h1>
-      <div class="circle left-top"></div>
-      <div class="circle right-top"></div>
-      <div class="circle left-bottom"></div>
-      <div class="circle right-bottom"></div>
+      <div class="buttons">
+        <button class="btn" onclick="enableDemo('demo-info')">Инфо</button>
+        <button class="btn" onclick="enableDemo('demo-size')">Размеры</button>
+        <button class="btn" onclick="enableDemo('demo-square-fix')">Квадрат фикс</button>  
+        <button class="btn" onclick="enableDemo('demo-square')">Квадрат адаптив</button> 
+      </div>
+      <div id="demo-info" class="content">
+        <h1 class="text"></h1>
+        <div class="color-main">fixed</div>
+        <div class="color-alt">absolute</div>
+      </div>
+      <div id="demo-square-fix" class="content">
+        <div class="square-fix">
+          <h2>500px</h2>
+        </div>
+      </div>
+      <div id="demo-square" class="content">
+        <div class="square">
+          <h2>20vmin</h2>
+        </div>
+      </div>
+      <div id="demo-size" class="content">
+        <div class="demo-wrappper">
+          <div class="slidecontainer">
+            <input type="range" min="1" max="20000" class="slider" id="widthRange">
+          </div>
+          <p>Ширина: <input class="size-input" type="number" id="widthInput"/></p>
+          
+          <div class="slidecontainer">
+            <input type="range" min="1" max="20000" class="slider" id="heightRange">
+          </div>
+          <p>Высота: <input class="size-input" type="number" id="heightInput"/></p>
+        </div>
+      </div>
+      <div class="circle color-main left-top"></div>
+      <div class="circle color-main right-top"></div>
+      <div class="circle color-main left-bottom"></div>
+      <div class="circle color-main right-bottom"></div>
+
+      <div class="circle circle-alt color-alt left-top"></div>
+      <div class="circle circle-alt color-alt right-top"></div>
+      <div class="circle circle-alt color-alt left-bottom"></div>
+      <div class="circle circle-alt color-alt right-bottom"></div>
     </div>
     <script type="text/javascript" src="main.js"></script>
   </body>
