@@ -32,23 +32,15 @@ function disableDemo() {
 }
 
 // Slider
-setSlider('widthRange', 'widthInput');
-setSlider('heightRange', 'heightInput');
+setSlider('widthInput');
+setSlider('heightInput');
 
-function setSlider(rangeId, outputId) {
-  const slider = document.getElementById(rangeId);
+function setSlider(outputId) {
   const output = document.getElementById(outputId);
-  const id = rangeId.replace('Range', ''); 
-  output.value = slider.value; 
+  const id = outputId.replace('Input', ''); 
   const size = `inner${id.charAt(0).toUpperCase() + id.slice(1)}`;
-  slider.value = window[size]; 
   output.value = window[size];
   output.oninput = function() {
-    slider.value = this.value;
-    document.querySelector('body').style[id] = `${this.value}px`;
-  }
-  slider.oninput = function() {
-    output.value = this.value;
     document.querySelector('body').style[id] = `${this.value}px`;
   }
 }
